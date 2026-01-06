@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import Image from "next/image";
 
 const heroConfig = {
@@ -117,20 +118,23 @@ export function VorqHero() {
   const longestKeyword = heroConfig.keywords.reduce((a, b) => a.label.length > b.label.length ? a : b).label;
 
   return (
-    <section className="pt-36 md:pt-26 lg:pt-36 pb-10 md:pb-14 lg:pb-12">
+    <section className="relative z-10 bg-white pt-36 md:pt-26 lg:pt-36 pb-10 md:pb-14 lg:pb-12">
       <div className="vorq-container">
         <div className="flex flex-col items-center text-center max-w-5xl mx-auto px-0 md:px-0">
           {/* H1 Heading */}
           <h1 className="vorq-h1 mb-6 flex flex-col items-center gap-2">
             <span className="text-6xl md:text-7xl lg:text-8xl">{heroConfig.titlePrefix}</span>
 
-            <span className="inline-flex justify-center items-center text-4xl md:text-7xl lg:text-8xl leading-tight" style={{ color: currentKeyword.color }}>
+            <span className="inline-flex justify-center items-center text-4xl md:text-6xl lg:text-7xl leading-tight" style={{ color: currentKeyword.color }}>
               {"{"}
               {/* Fixed Minimal Height Container to reduce jumps */}
               <span className="inline-flex items-center justify-center min-h-[4.5rem] md:min-h-[6rem] lg:min-h-[7rem] mx-1 transition-all duration-300">
-                <span className="inline-block text-center break-words max-w-[120vw]">
+                <span
+                  className="inline-block text-center break-words max-w-[120vw]"
+                  style={{ fontFamily: "var(--font-hennypenny), cursive" }}
+                >
                   {displayText}
-                  <span className="animate-pulse align-middle">|</span>
+                  <span className="animate-pulse align-middle not-italic font-sans">|</span>
                 </span>
               </span>
               {"}"}
@@ -146,13 +150,13 @@ export function VorqHero() {
 
           {/* Button Row */}
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <a href="#projects" className="vorq-btn-secondary w-full sm:w-auto">
+            <Link href="/#projects" className="vorq-btn-secondary w-full sm:w-auto">
               Explore Projects
-            </a>
+            </Link>
             <div className="vorq-glow-wrapper relative">
-              <a href="#book" className="vorq-btn-primary w-full sm:w-auto relative z-10">
+              <Link href="/book" className="vorq-btn-primary w-full sm:w-auto relative z-10">
                 Book a Call
-              </a>
+              </Link>
 
               {/* "It's FREE" Callout - Desktop Only */}
               <div className="hidden lg:block absolute left-[102%] top-1/2 -translate-y-1/2 w-48 pointer-events-none">

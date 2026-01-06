@@ -45,6 +45,16 @@
     --color-vorq-logo-text: var(--vorq-logo-text);
     --color-vorq-logo-icon: var(--vorq-logo-icon);
     --color-vorq-brand-muted: var(--vorq-brand-logo-muted);
+
+    /* New Premium Dark Theme Variables */
+    --vorq-bg-dark: #050608;
+    --vorq-text-dark-secondary: #d1d5db;
+    /* Light gray for readable text on dark */
+}
+
+.smooth-fade-to-dark {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--vorq-bg-dark) 100%);
+    pointer-events: none;
 }
 
 @theme inline {

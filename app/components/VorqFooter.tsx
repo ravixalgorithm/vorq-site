@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
 import { Globe } from "lucide-react";
 
 const footerLinks = {
@@ -174,18 +175,18 @@ export function VorqFooter() {
                 dashboards, and interactive products that convert.
               </p>
               <div className="flex gap-2 lg:gap-4">
-                <a
-                  href="/contact"
+                <Link
+                  href="/book"
                   className="inline-flex items-center justify-center bg-[#FF5722] text-white text-md lg:text-lg font-medium px-8 py-4 rounded-2xl hover:bg-[#E64A19] transition-colors duration-200"
                 >
                   Start a project
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/book"
                   className="inline-flex items-center justify-center bg-[#2A2A2A] text-white text-md lg:text-lg font-medium px-8 py-4 rounded-2xl hover:bg-[#3A3A3A] transition-colors duration-200"
                 >
                   Book a call
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -294,15 +295,15 @@ export function VorqFooter() {
             </div>
 
             {/* Book a call Button (Moved here) */}
-            <a
-              href="#book"
+            <Link
+              href="/book"
               className="inline-flex items-center gap-2 bg-[#FF5722] text-white text-lg font-medium px-6 py-3 rounded-full hover:bg-[#E64A19] transition-colors duration-200"
             >
               Book a call
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
 

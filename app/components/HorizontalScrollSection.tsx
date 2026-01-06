@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
+import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { PhoneCall, PencilRuler, Code2, Rocket, LucideIcon } from "lucide-react";
@@ -460,7 +461,7 @@ export function HorizontalScrollSection() {
               </span>
             </h2>
           </div>
-          <p className="text-gray-400 text-xl max-w-sm">A seamless journey from chaos to clarity.</p>
+          <p className="text-gray-300 text-xl max-w-sm">A seamless journey from chaos to clarity.</p>
         </div>
 
         {/* Steps */}
@@ -529,7 +530,7 @@ export function HorizontalScrollSection() {
                 </svg>
               </h3>
 
-              <p className="text-base md:text-2xl text-gray-400 leading-relaxed max-w-[280px] md:max-w-lg">
+              <p className="text-base md:text-2xl text-gray-300 leading-relaxed max-w-[280px] md:max-w-lg">
                 <span className="text-white font-medium">{step.subtitle}</span> — {step.description}
               </p>
             </div>
@@ -548,9 +549,9 @@ export function HorizontalScrollSection() {
             <br />
             Launch?
           </h3>
-          <button className="px-10 py-5 bg-[#FF5722] text-white rounded-full text-xl font-bold hover:scale-105 transition-transform duration-300">
+          <Link href="/book" className="px-10 py-5 bg-[#FF5722] text-white rounded-full text-xl font-bold hover:scale-105 transition-transform duration-300">
             Start Now
-          </button>
+          </Link>
         </div>
       </div>
     </section>

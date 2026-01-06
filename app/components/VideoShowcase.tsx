@@ -85,7 +85,7 @@ export function VideoShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="py-10 md:py-20 bg-[#ffffff]"
+      className="relative py-10 md:py-20 bg-[#ffffff]"
     >
       <div className="vorq-container">
         {/* Video Container */}
@@ -93,6 +93,7 @@ export function VideoShowcase() {
           ref={videoContainerRef}
           className="relative w-full mx-auto aspect-video bg-[#111111] rounded-2xl md:rounded-3xl overflow-hidden shadow-xl"
         >
+          {/* Continuous Loop Video */}
           {/* Continuous Loop Video */}
           <video
             ref={videoRef}
@@ -102,9 +103,6 @@ export function VideoShowcase() {
             playsInline
             src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
           />
-
-          {/* Optional overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-20" />
         </div>
       </div>
     </section>

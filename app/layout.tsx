@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Archivo } from "next/font/google";
+import { Geist, Geist_Mono, Archivo, Henny_Penny } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,29 +18,35 @@ const archivo = Archivo({
   weight: ["400", "500", "600", "700"],
 });
 
+const hennypenny = Henny_Penny({
+  variable: "--font-hennypenny",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.vorq.agency"),
   title: "VORQ | Premium SaaS Design & Development Agency",
   description: "We build pixel-perfect SaaS landing pages, marketing sites, and dashboards that convert. Expert Next.js, Framer Motion, and Webflow development.",
-  keywords: ["SaaS design", "Web development agency", "Next.js developers", "Framer Motion animations", "SaaS landing pages", "Webflow agency", "Premium web design"],
-  authors: [{ name: "VORQ Agency" }],
   openGraph: {
-    title: "VORQ | Premium SaaS Design & Development Agency",
-    description: "We design & build digital products that actually convert. From rapid launches to custom applications.",
-    url: "https://vorq.agency", // Placeholder URL
-    siteName: "VORQ",
-    locale: "en_US",
     type: "website",
+    url: "/",
+    title: "VORQ | Premium SaaS Design & Development Agency",
+    description: "We build pixel-perfect SaaS landing pages, marketing sites, and dashboards that convert. Expert Next.js, Framer Motion, and Webflow development.",
+    images: ["/banner.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "VORQ | Premium SaaS Design & Development Agency",
-    description: "We design & build digital products that actually convert.",
+    description: "We build pixel-perfect SaaS landing pages, marketing sites, and dashboards that convert. Expert Next.js, Framer Motion, and Webflow development.",
+    images: ["/banner.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
+  icons: {
+    icon: "/logo.svg",
   },
 };
+
+import Preloader from "./components/Preloader";
 
 export default function RootLayout({
   children,
@@ -49,7 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} antialiased`}>{children}</body>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${hennypenny.variable} antialiased`}>
+        <Preloader />
+        {children}
+      </body>
     </html>
   );
 }

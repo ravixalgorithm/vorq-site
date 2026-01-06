@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 export default function VorqNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -8,10 +9,10 @@ export default function VorqNav() {
   const lastScrollY = useRef(0);
 
   const navLinks = [
-    { label: "Services", href: "#services" },
-    { label: "Projects", href: "#projects" },
-    { label: "Blog", href: "#blog" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Services", href: "/#services" },
+    { label: "Projects", href: "/#projects" },
+    { label: "Blog", href: "/#blog" },
+    { label: "Contact Us", href: "/book" },
   ];
 
   useEffect(() => {
@@ -62,28 +63,28 @@ export default function VorqNav() {
         <div className="vorq-container">
           <div className="flex items-center justify-between py-6">
             {/* Logo */}
-            <a href="/" className="vorq-logo">
+            <Link href="/" className="vorq-logo">
               <span className="font-bold text-4xl" style={{ fontFamily: "'Sekuya', serif" }}>VORQ</span>
-            </a>
+            </Link>
 
             <div className="flex gap-12">
               {/* Desktop Navigation Links */}
               <div className="hidden lg:flex items-center gap-8">
                 {navLinks.map((link) => (
-                  <a key={link.label} href={link.href} className="vorq-nav-link">
+                  <Link key={link.label} href={link.href} className="vorq-nav-link">
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
 
               {/* Desktop CTA Buttons */}
               <div className="hidden lg:flex items-center gap-4">
-                <a href="#quote" className="vorq-btn-secondary">
+                <Link href="/book" className="vorq-btn-secondary">
                   Request a Quote
-                </a>
-                <a href="#book" className="vorq-btn-primary">
+                </Link>
+                <Link href="/book" className="vorq-btn-primary">
                   Book a Call
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -111,22 +112,22 @@ export default function VorqNav() {
               <div className="flex flex-col gap-4">
 
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
                     className="vorq-nav-link py-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
                 <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-[#dddddd]">
-                  <a href="#quote" className="vorq-btn-secondary text-center">
+                  <Link href="/book" className="vorq-btn-secondary text-center">
                     Request a Quote
-                  </a>
-                  <a href="#book" className="vorq-btn-primary text-center">
+                  </Link>
+                  <Link href="/book" className="vorq-btn-primary text-center">
                     Book a Call
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
