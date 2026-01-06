@@ -159,9 +159,9 @@ function ProjectCardContent({ project, index }: { project: typeof projects[0], i
                 {/* Custom Floating Cursor */}
                 <div
                     ref={cursorRef}
-                    className="absolute top-0 left-0 w-32 h-32 bg-white text-black rounded-full flex items-center justify-center font-bold text-sm uppercase tracking-widest pointer-events-none z-50 opacity-0 scale-0 origin-center -translate-x-1/2 -translate-y-1/2 shadow-xl"
+                    className="absolute top-0 left-0 w-32 h-32 bg-[#FF5722] text-white rounded-full flex items-center justify-center font-bold text-sm uppercase tracking-widest pointer-events-none z-50 opacity-0 scale-0 origin-center -translate-x-1/2 -translate-y-1/2 shadow-2xl mix-blend-normal backdrop-blur-md bg-opacity-90"
                 >
-                    Click to Open
+                    View Case
                 </div>
 
                 {/* Inner Video/Thumbnail Container */}
@@ -184,8 +184,11 @@ function ProjectCardContent({ project, index }: { project: typeof projects[0], i
                         loop
                         muted
                         playsInline
-                        className="w-full h-full object-cover absolute inset-0 z-20 opacity-0 transition-opacity duration-300 pointer-events-none"
+                        className="w-full h-full object-cover absolute inset-0 z-20 opacity-0 transition-opacity duration-500 ease-out pointer-events-none"
                     />
+
+                    {/* Hover Overlay Gradient for Text Readability if needed */}
+                    <div className="absolute inset-0 bg-black/10 z-25 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 pointer-events-none" />
                 </div>
 
                 {/* Floating Badge (Top Left) outside video container */}

@@ -16,10 +16,12 @@ export default function VorqPage() {
       <VorqNav />
       <VorqHero />
       <VideoShowcase />
-      <HorizontalScrollSection />
-      <ServicesGrid />
-      <ToolStack />
-      <WhyVorqSection />
+      <div className="bg-[#050608] relative z-10">
+        <HorizontalScrollSection />
+        <ServicesGrid />
+        <ToolStack />
+        <WhyVorqSection />
+      </div>
       <ProjectShowcase />
       <TestimonialSection />
       <VorqFAQ />

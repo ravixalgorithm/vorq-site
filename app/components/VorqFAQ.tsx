@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 const faqItems = [
   {
@@ -141,15 +142,15 @@ export function VorqFAQ() {
                 </div>
 
                 {/* CTA Button */}
-                <a
-                  href="#contact"
+                <Link
+                  href="/book"
                   className="inline-flex items-center justify-center gap-3 bg-[#FF5722] text-[#fff] text-base font-semibold px-8 py-4 rounded-full transition-colors duration-200 whitespace-nowrap"
                 >
                   Get in touch
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
