@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Archivo, Henny_Penny } from "next/font/google";
+import { Geist, Geist_Mono, Archivo, Henny_Penny, Sekuya } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,6 +22,13 @@ const hennypenny = Henny_Penny({
   variable: "--font-hennypenny",
   subsets: ["latin"],
   weight: ["400"],
+});
+
+const sekuya = Sekuya({
+  variable: "--font-sekuya",
+  subsets: ["latin"],
+  weight: ["400"],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -55,7 +62,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${hennypenny.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${archivo.variable} ${hennypenny.variable} ${sekuya.variable} antialiased`}>
         <Preloader />
         {children}
       </body>
