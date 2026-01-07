@@ -22,7 +22,7 @@ const footerLinks = {
   ],
   about: [
     { label: "Our approach", href: "#" },
-    { label: "Team", href: "#" },
+    { label: "Team", href: "/team" },
     { label: "Why VORQ", href: "#" },
     { label: "Blog", href: "#" },
   ],
@@ -163,8 +163,8 @@ export function VorqFooter() {
     <footer className="bg-white pt-8">
       <div className="vorq-container">
         {/* Hero Card Section */}
-        <div className="bg-[#0D0D0D] rounded-[32px] py-8 px-4 lg:p-12 lg:py-20  mb-16 overflow-hidden">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="relative bg-[#0D0D0D] rounded-[32px] py-8 px-4 lg:p-12 lg:py-20  mb-16 overflow-hidden">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
             {/* Left Content */}
             <div className="flex-1 max-w-xl">
               <h2 className="text-white text-4xl lg:text-5xl font-medium leading-tight mb-6">
@@ -225,12 +225,12 @@ export function VorqFooter() {
               <ul className="flex flex-col gap-1 lg:gap-3">
                 {footerLinks.cases.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-[#6B7280] text-lg lg:text-sm font-normal hover:text-black transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -242,12 +242,12 @@ export function VorqFooter() {
               <ul className="flex flex-col gap-1 lg:gap-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-[#6B7280] text-lg lg:text-sm font-normal hover:text-black transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -259,12 +259,12 @@ export function VorqFooter() {
               <ul className="flex flex-col gap-1 lg:gap-3">
                 {footerLinks.about.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-[#6B7280] text-lg lg:text-sm font-normal hover:text-black transition-colors duration-200"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

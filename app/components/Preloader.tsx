@@ -72,7 +72,7 @@ export default function Preloader() {
                     >
                         {/* Central Info */}
                         <div className="flex flex-col items-center overflow-hidden">
-                            <h1 className="text-8xl md:text-9xl font-black tracking-tighter mix-blend-difference mb-4">
+                            <h1 className="text-8xl md:text-9xl font-black mix-blend-difference mb-4 font-[family-name:var(--font-sekuya)]">
                                 VORQ
                             </h1>
                             <div className="h-8 overflow-hidden relative w-full flex justify-center">
